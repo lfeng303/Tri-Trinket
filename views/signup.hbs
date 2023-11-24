@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name = "author" content = "Leo Feng">
+    <title>Account Signup</title>
+    <link rel="shortcut icon" href="/assets/favicon.ico">
+    <link rel = "stylesheet" href = "/style1.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/2c0cd7e697.js" crossorigin="anonymous"></script>
+    
+</head>
+<body>
+    <form class="form" method = "POST" action = "/auth/signup" id="createAccount">
+        <h1 class="form__title">Create Account</h1>
+
+            <div class="form__message form__message--error"></div>
+            <div class="form__input-group">
+                <input type="email" class="form__input" id = "email" name = "email" autofocus placeholder="Email">
+                
+            </div>
+            <div class="form__input-group">
+                <input type="text"  class="form__input" id = "user_name" name = "user_name" autofocus placeholder="Username">
+                
+            </div>
+            
+            <div class="form__input-group">
+                <input type="password" class="form__input" id = "password" name = "password" autofocus placeholder="Password">
+                
+            </div>
+            
+            <button class="form__button" type="submit" value = "Signup">Signup</button>
+            <p class="form__text">
+                <a class="form__link" href="/login" id="linkLogin">Already have an account? Sign in</a>
+            </p>
+            {{#if message}}
+            <h4 class = "alert alert-danger" style = "margin-top: 25px display: block;"> {{message}}</h4>
+            {{/if}}
+    </form>
+
+    
+</body>

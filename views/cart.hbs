@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Dropshipping test</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name = "author" content = "Leo Feng">
+<link rel = "stylesheet" href = "/style.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/2c0cd7e697.js" crossorigin="anonymous"></script>
+  
+  
+</head>
+
+<body class = "regular-background">
+<div class="width-100 search-panel" style = "margin-top: -10px">
+  <div class="container">
+    <div style = "margin-left: 0px; padding-right: 0px; height: 52px; width: 9%; float: left">
+      <img src = "C:\Users\Lei\Downloads\HatchfulExport-All\favicon.png" class="logo" style = "width: 100%; height: 100%;">
+    </div>
+    <div class = "width-10" style = "margin-left: 5px; margin-top: 15px; font-size: 18px"> 
+      <a href = "/" style = "color: white; font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif"> Tri-trinket</a>
+    </div>
+    
+    <div class="width-50">
+      <input class="search-textbox" id = "search-textbox" type="text" Placeholder="Search for products, brands and more">
+      <button class="search-button" id = "search-button">
+        <i class="fa fa-search" aria-hidden="true"></i>
+      </button>
+    </div>
+    <div class="width-30">
+      <ul class="cart-sect">
+        <li>
+          <a href = "/about"> About Us</a>
+        </li>
+        <li>
+          <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+          <a href="/signup">Account</a>
+
+        </li>
+        <li>
+          <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+          <a href="/cart">Cart({{totalItems}})</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+
+
+    <div class = "width-100">
+        <div class = "container">
+            <div class = "shopping-cart">
+                <div class="cart-title">
+                <p> {{username}}'s shopping cart</p>
+            </div>
+            {{#if products}}
+            {{# each products}}
+                <div class="cart-item">
+            
+            
+ 
+                    <div class="cart-image">
+                        <img style = "width: 100%"; src={{this.item.img}} alt="" />
+                    </div>
+ 
+                    <div class="cart-text">
+                        <span style = "display: block; font-size: 1.5rem">{{this.item.name}}</span>
+                        <span style = "display: block">{{this.item.description}}</span>
+                
+                    </div>
+ 
+    
+ 
+                    <div class="cart-price">${{this.item.price}}</div>
+
+                    <div class = "cart-remove">
+                        <a href = "/remove/{{this.item.id}}" class = "btn btn-dark"> Remove Item</a>
+                    </div>
+                </div>
+            {{/each}}
+            {{/if}}
+            <div class = "checkout">
+
+                
+
+                <div class = "cart-totalprice">
+                    <a>Total: ${{totalPrice}}</a>
+                </div>
+                <div class = "cart-remove">
+                    <a href = "/" class = "btn btn-dark" style = "font-size: 2rem">Checkout</a>
+                </div>
+                
+            </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+</body>
